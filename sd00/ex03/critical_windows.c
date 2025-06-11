@@ -7,7 +7,7 @@ int third_condition(const int *readings, int i, int window_end)
     
     sum = 0;
     while (i < window_end)
-    sum += readings[i++];
+        sum += readings[i++];
 return ((sum / 5) >= 90);
 }
 
