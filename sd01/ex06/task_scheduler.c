@@ -48,5 +48,9 @@ struct ScheduleResult *schedule_tasks(struct TaskList *tasks)
         int core_id = task_id % core_count; // Simple round-robin assignment
         update_schedule_entry(result, core_id, task_id);
     }
+    //Free allocated resources
+    free_task_profile(profile);
+    free_priority_map(priorities);
+    return result; // Return the final schedule result
 
 }

@@ -1,6 +1,12 @@
 #ifndef TASK_SCHEDULER_H
 #define TASK_SCHEDULER_H
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
+#include <ctype.h>
+
 // Analyze task load and I/O behavior. Returns a new TaskProfile or NULL on failure.
 struct TaskProfile *profile_tasks(struct TaskList *tasks);
 
