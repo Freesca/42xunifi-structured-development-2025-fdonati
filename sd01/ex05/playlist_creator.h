@@ -1,6 +1,11 @@
 #ifndef PLAYLIST_CREATOR_H
 #define PLAYLIST_CREATOR_H
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
+#include <ctype.h>
 
 // Analyze user mood. Returns a new MoodSettings or NULL on failure.
 struct MoodSettings *analyze_user_mood(void);
@@ -31,6 +36,9 @@ void free_mood_settings(struct MoodSettings *mood);
 void free_filter_settings(struct FilterSettings *filters);
 void free_song_data(struct SongData *song);
 void free_playlist(struct Playlist *playlist);
+
+struct FilterSettings *refine_filters_on_mood(struct MoodSettings *mood, struct FilterSettings *filters);
+struct SongData *fetch_song_on_filters(struct FilterSettings *filters);
 
 struct Playlist *create_playlist(void);
 
